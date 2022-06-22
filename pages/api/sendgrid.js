@@ -2,11 +2,14 @@ import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendEmail(req, res) {
+async function sendEmail(email, req, res) {
   try {
     await sendgrid.send({
-      to: "alex.otieno@simpleformations.ke", // Your email where you'll receive emails
-      from: "secure5@simpleformations.ke", // your website email address here
+      to: email,
+      from: {
+        name: process.env.FROM_NAME,
+        email: process.env.FROM_EMAIL,
+      },
       subject: `[Lead from website] : ${req.body.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">

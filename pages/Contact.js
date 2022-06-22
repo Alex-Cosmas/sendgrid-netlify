@@ -223,7 +223,7 @@ export default function Contact() {
             <div className="text-left">
               {showSuccessMessage && (
                 <p className="my-2 text-sm font-semibold text-green-500">
-                  Thankyou! Your Message has been delivered.
+                  Thank you! Your Message has been delivered.
                 </p>
               )}
               {showFailureMessage && (
