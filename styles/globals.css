@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+}
+:root,
+#root,
+#docs-root {
+  --sflPrimary: #431646;
+  --secondary: #a0aec0;
+  --accent: #718096;
+  --background: #fff;
+  --main: #0d0106;
+  --header: #2d3748;
+
+  --error: #f44336;
+
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* 
+
+Primary
+Secondary
+Accent
+Error
+Info
+Success
+Warning
+
+*/
+
+svg {
+  width: inherit;
+  height: inherit;
+}
+
+.active {
+  @apply flex items-center px-3 py-2 text-sm font-medium hover:text-gray-900 hover:bg-gray-50;
+}
+
+.pg-viewer-wrapper {
+  overflow-y: unset !important;
+}
+
+.photo-viewer-container {
+  width: unset !important;
+  height: unset !important;
+}
+
+.photo-viewer-container > img {
+  width: unset !important;
+  height: unset !important;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 100%;
+}
+
+@layer components {
+  .button {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md;
+  }
+  .button:focus {
+    @apply transition duration-300 ease-in-out delay-700 outline-none ring-1 ring-offset-2 ring-green-focused bg-green-focused;
+  }
+
+  .button-primary {
+    @apply bg-green-primary;
+  }
+
+  .button-primary:hover {
+    @apply bg-green-700;
+  }
+  .button-primary:focus {
+    @apply outline-none ring-1 ring-offset-2 ring-green-focused bg-green-focused;
+  }
+
+  .button-transparent {
+    @apply text-sflPrimary;
+  }
+  .button-success {
+    @apply bg-green-primary;
+  }
+  .button-success:hover {
+    @apply bg-green-700;
+  }
+  .button-success:focus {
+    @apply outline-none ring-1 ring-offset-2 ring-green-focused bg-green-focused;
+  }
+
+  .button-warning {
+    @apply bg-red-600;
+  }
+
+  .button-warning:hover {
+    @apply bg-red-600 hover:bg-red-500;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+}
